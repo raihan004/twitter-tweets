@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter feed</title>
+    <style>
+        body {
+            width: 600px;
+            margin: auto;
+        }
+
+        .tweets ul {
+            list-style: none;
+        }
+
+        .tweets li {
+            list-style: none;
+            padding-bottom: 1em;
+        }
+
+        .tweets img {
+            float: left;
+            padding-right: 1em;
+            clear: both;
+        }
+
+        .tweets li a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tweets">
+        <script id='tweets-tempalte' type='text/x-handlebars-template'>
+            {{#each this}}
+            <li>
+                <img src="{{thumb}}" alt=" {{author}}">
+                <p><a href="{{link}}" target='_blank'>{{tweet}}</a>
+                </p>
+            </li>
+            {{/each}}
+
+        </script>
+    </ul>
+    <script src='js/jquery.js'></script>
+    <script src='js/handlebars.js'></script>
+    <script src='js/script.js'></script>
+</body>
+
+</html>
